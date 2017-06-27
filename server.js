@@ -10,6 +10,18 @@ var app = express();
 
 var PORT = process.env.PORT || 3000;
 
+var guests = [
+	{
+		name: "John",
+		phone: "954-123-1234"
+	},
+
+	{
+		name: "Nate",
+		phone: "904 221-2341"
+	}
+];
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.text());
@@ -39,6 +51,40 @@ app.get("/style.css", function(req, res) {
 	})
 });
 
+app.get("/api/:guests?", function(req, res) {
+
+	var chosen = req.params.guests;
+
+	if(chosen) {
+
+
+
+		for (var i = 0; i < guests.length; i++) {
+
+			if(chosen === guests[i].name) {
+
+				return res.json(guests[i]);
+			}
+		}
+
+		return res.body(false);
+	}
+
+	return res.json(guests);
+
+})
+
+
+app.post("/reserve", function(req, res) {
+
+	var newGuest = req.body;
+
+	guests.push(newGuest);
+
+	res.json(newGuest);
+
+	console.log(newGuest);
+})
 
 
 app.listen(PORT, function() {
