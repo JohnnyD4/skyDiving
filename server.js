@@ -18,7 +18,7 @@ var guests = [
 
 	{
 		name: "Nate",
-		phone: "904 221-2341"
+		phone: "904-221-2341"
 	}
 ];
 
@@ -51,13 +51,14 @@ app.get("/style.css", function(req, res) {
 	})
 });
 
+
 app.get("/api/:guests?", function(req, res) {
 
 	var chosen = req.params.guests;
 
 	if(chosen) {
 
-
+		console.log(chosen);
 
 		for (var i = 0; i < guests.length; i++) {
 
@@ -67,7 +68,7 @@ app.get("/api/:guests?", function(req, res) {
 			}
 		}
 
-		return res.body(false);
+		return res.json(false);
 	}
 
 	return res.json(guests);
@@ -75,7 +76,8 @@ app.get("/api/:guests?", function(req, res) {
 })
 
 
-app.post("/reserve", function(req, res) {
+
+app.post("/api/new", function(req, res) {
 
 	var newGuest = req.body;
 

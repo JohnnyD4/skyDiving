@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="data.js"></script> -->
 
 </head>
 <body>
@@ -16,7 +17,7 @@
         <h1>To Jump or Not to Jump?</h1>
         <h3>reserve your spot in the sky today</h3>
         <hr>
-        <a href="/"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> View Wait List</button></a>
+        <a href="/table"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> View Wait List</button></a>
     </div>
     <div class="row">
 
@@ -24,25 +25,25 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Add Characters</strong></h3>
+                    <h3 class="panel-title"><strong>Add Information</strong></h3>
                 </div>
                 <div class="panel-body">
                     <form method="POST" role="form">
 
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" class="form-control" id="userName">
                         </div>
 
                         <div class="form-group">
-                            <label for="role">Role</label>
-                            <input type="text" class="form-control" id="role">
+                            <label for="role">Phone Number</label>
+                            <input type="text" class="form-control" id="userNumber">
                         </div>
 
                     </form>
                     <br>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="glyphicon glyphicon-fire"></span> reserve your spot </button>
+                        <button type="submit" class="btn btn-primary btn-md" id="reserveBtn"><span class="glyphicon glyphicon-fire"></span> reserve your spot </button>
                     </div>
                 </div>
             </div>
@@ -52,27 +53,28 @@
 </div>
 
 <script>
-    $("<img>").attr("src", "assets/images/defaultScuba.jpg").prependTo("#flickrImg");
+    // $("<img>").attr("src", "assets/images/defaultScuba.jpg").prependTo("#flickrImg");
 </script>
 
 <script type="text/javascript">
-    // Question: What does this code do?
-    $("#add-btn").on("click", function(event) {
-        event.preventDefault();
-        var newCharacter = {
-            name: $("#name").val().trim(),
-            role: $("#role").val().trim(),
-            age: $("#age").val().trim(),
-            forcePoints: $("#force-points").val().trim()
+  $("#reserveBtn").on("click", function(e) {
+
+        e.preventDefault();
+
+        var newGuest = {
+            
+            name: $("#userName").val().trim(),
+
+            phone: $("#userNumber").val().trim(),      
         };
 
-        // Question: What does this code do??
-        $.post("/api/new", newCharacter)
-            .done(function(data) {
-                console.log(data);
-                alert("Adding character...");
-            });
-    });
+        $.post("/api/new", newGuest)
+        .done(function(data) {
+            alert("added guest");
+        })
+
+
+    })
 </script>
 
 </body>
