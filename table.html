@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkyDiving Wait list</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="data.js"></script> -->
+
+</head>
+<body>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>To Jump or Not to Jump?</h1>
+        <h3>reserve your spot in the sky today</h3>
+        <hr>
+        <a href="/reserve"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> Reserve a spot</button></a>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Wait list</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="list"></div>
+                    <br>
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // $("<img>").attr("src", "assets/images/defaultScuba.jpg").prependTo("#flickrImg");
+</script>
+
+<script type="text/javascript">
+  
+    $.get("/api", function(data) {
+
+        for (var i = 0; i < data.length; i++) {
+
+            $(".list").append($("<div class='guestList'><h4>" + data[i].name + "</h4></div>"));
+            $(".list").append($("<div class='guestList'><h4>" + data[i].phone + "</h4></div"));
+            $(".list").append($("<hr>"));
+        }
+    })
+
+
+</script>
+
+</body>
+</html>
