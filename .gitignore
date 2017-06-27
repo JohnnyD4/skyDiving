@@ -1,2 +1,8 @@
 .DS_Store
 node_modules
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/dbnavigator.xml
+.idea/skyDiving.iml
+/.idea/vcs.xml
