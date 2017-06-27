@@ -25,6 +25,11 @@ app.get("/table", function(req, res) {
 	res.sendFile(__dirname + "/table.html");
 });
 
+app.get("/reserve", function(req, res) {
+
+	res.sendFile(__dirname + "/reserve.html");
+});
+
 app.get("/style.css", function(req, res) {
 
 	fs.readFile(__dirname + "/style.css", "utf8", function(err, data) {
@@ -33,6 +38,8 @@ app.get("/style.css", function(req, res) {
 		res.end(data);
 	})
 });
+
+
 
 app.listen(PORT, function() {
 	console.log(PORT);
