@@ -5,6 +5,7 @@
     <title>Star Wars - Express</title>
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -52,7 +53,11 @@
 </div>
 
 <script>
-    $("<img>").attr("src", "assets/images/defaultScuba.jpg").prependTo("#flickrImg");
+    // A $( document ).ready() block.
+    $( document ).ready(function() {
+        console.log( "ready!" );
+//        $('body').css("background-image", "Skydiving.png");
+    });
 </script>
 
 <script type="text/javascript">
