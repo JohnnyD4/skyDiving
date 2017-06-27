@@ -2,6 +2,7 @@ body {
     background-image: url("Skydiving.png");
 }
 
+
 .jumbotron {
     background: rgba(220, 220, 220, 0.4);
 }
@@ -10,3 +11,4 @@ body {
 .panel {
     background: rgba(220, 220, 220, 0.4);
 }
+
