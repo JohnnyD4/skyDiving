@@ -26,6 +26,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json"}));
+//app.use('/media', express.static(path.join(__dirname, 'Images')));
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+console.log(path.join(__dirname, 'Images'));
 
 app.get("/", function(req, res) {
 	
