@@ -1,14 +1,18 @@
 body {
     background-image: url("Skydiving.png");
+    background-size: cover;
 }
 
 
+
 .jumbotron {
-    background: rgba(220, 220, 220, 0.4);
+    background: rgba(220, 220, 220, 0.4) !important;
+    margin-top: 20px;
 }
 
 
 .panel {
-    background: rgba(220, 220, 220, 0.4);
+    background: rgba(220, 220, 220, 0.4) !important;
+    margin-bottom: 20px;
 }
 
