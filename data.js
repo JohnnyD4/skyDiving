@@ -8,9 +8,9 @@
 
 	 	var newGuest = {
 	 		
-	 		name: $("#userName").val().trim();
+	 		name: $("#userName").val().trim(),
 
-	 		phone: $("#userNumber").val().trim(); 		
+	 		phone: $("#userNumber").val().trim()
 	 	};
 
 	 	$.post("/api/new", newGuest)
@@ -23,4 +23,4 @@
  	
 
 
- })
+ });

@@ -12,3 +12,14 @@ body {
     background: rgba(220, 220, 220, 0.4);
 }
 
+hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+
+
+.btn-warning {
+    background-color: #2f7130;
+    border-color: #2f7130;
+}
